@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World in Vue</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{ message }}</h1>
+    </div>
+    <!-- Import Vue.js in the index -->
+    <script src="vue.js"></script>
+    <!-- Import Vue.js in the index -->
+    <script>
+        /** Instance vue for the use framework*/
+        var el = new Vue({
+            el: '#app', // Obj in HTML
+            data: {
+                message: 'Hello World' // Content print in the html with vue
+            }
+        });
+    </script>
+</body>
+</html>

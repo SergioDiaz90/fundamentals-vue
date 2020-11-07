@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binding</title>
+</head>
+<body>
+    <!-- Binding is the reactivity within obj-property 
+        and element in DOM and exist and there are two types:
+        one way binding -> Change elements in one direction (obj -> DOM)
+        Two way binding -> Change in obj or elements bidirectional (Obj -> DOM or DOM -> Obj)
+    -->
+    <div id="app">
+        <h1>{{ message }}</h1>
+        <input type="text" v-model='message'> <!-- Guideline of Vue an example of reactivity -->
+    </div>
+    <!-- Import Vue.js in the index -->
+    <script src="vue.js"></script>
+    <!-- Import Vue.js in the index -->
+    <script>
+        /** Instance vue for the use framework*/
+        var el = new Vue({
+            el: '#app', // Obj in HTML
+            data: {
+                message: 'Hello World' // Content print in the html with vue
+            }
+        });
+    </script>
+</body>
+</html>

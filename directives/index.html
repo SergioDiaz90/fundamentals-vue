@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directives</title>
+</head>
+<body>
+    <!-- Directives is an attribute of tags for manipulate
+        elements in doc.
+    -->
+    <div id="app">
+        <h1 v-text='message'></h1> <!-- This is a other method-->
+        <input type="text" v-model='message'> <!-- Guideline of Vue an example of reactivity -->
+    </div>
+    <!-- Import Vue.js in the index -->
+    <script src="vue.js"></script>
+    <!-- Import Vue.js in the index -->
+    <script>
+        /** Instance vue for the use framework*/
+        var el = new Vue({
+            el: '#app', // Obj in HTML
+            data: {
+                message: 'Hello World' // Content print in the html with vue
+            },
+            /**
+                The hooks is functions applicables an every-lifecycle of
+                instance and allow actions.  
+            */
+            beforeCreate: () => { // function executed beforecreate componente of instance Vue
+                console.log('before-created');
+            },
+            created: () => {  // function executed in the moment create componente of instance Vue
+                console.log('created');
+            },
+            mounted: () => { // function executed when componente of instance Vue is mounted in the DOM
+                console.log('mounted');
+            }, 
+            updated: () => { // function executed when anyvalue in the DOM change in componente of instance Vue
+                console.log('Updated');
+            },
+            destroyed: () => { // function executed before delete or destroy componente of instance Vue
+                console.log('Destroyed');
+            }
+        });
+    </script>
+</body>
+</html>

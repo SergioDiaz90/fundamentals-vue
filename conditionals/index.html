@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditionals</title>
+</head>
+<body>
+    <!-- v-if is util for hidden or show elements in DOM.
+    -->
+    <div id="app">
+        <h1 v-text="message"></h1>
+        <p v-if="flag">True</p>
+        <p v-else="flag">False</p>
+        <p v-show="flag">show</p>
+        <template v-if="text">
+            <p>Uno</p>
+            <p>Dos</p>
+            <p>Tres</p>
+        </template>
+    </div>
+    <!-- Import Vue.js in the index -->
+    <script src="vue.js"></script>
+    <!-- Import Vue.js in the index -->
+    <script>
+        /** Instance vue for the use framework*/
+        var el = new Vue({
+            el: '#app', // Obj in HTML
+            data: {
+                message: "Hola Mundo",
+                flag: true,
+                text: true
+            },
+        });
+    </script>
+</body>
+</html>

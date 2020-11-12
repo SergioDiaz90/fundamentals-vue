@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styles</title>
+</head>
+<body>
+    <!-- Css in vue can use staticaly and dinamicallly.
+    -->
+    <div id="app">
+        <h1 v-bind:style="{ fontSize: fontSize + 'px'}" v-text="message"></h1>
+        <div v-bind:class="{'alert': flag, 'alert-danger': flag}"></div>
+        <div class='alert' v-bind:class="{'alert-danger': flag}"></div>
+        <div class='alert' v-bind:class="classObj"></div>
+        <div class='alert' v-bind:class="[classObj, classObj]"></div>
+        <div class='alert' v-bind:class="[(flag) ? 'alert-danger' : 'alert-success' ]"></div>
+        <div class='alert' v-bind:class="classObject"></div>
+    </div>
+    <!-- Import Vue.js in the index -->
+    <script src="vue.js"></script>
+    <!-- Import Vue.js in the index -->
+    <script>
+        /** Instance vue for the use framework*/
+        var el = new Vue({
+            el: '#app', // Obj in HTML
+            data: {
+                message: "Hola Mundo",
+                flag: true,
+                fontSize: 50,
+                classObj: {
+                    'alert-danger': true
+                }
+            },
+            computed: {
+                classObject: () => {
+                    return {
+                        'alert-danger' : this.flag
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
